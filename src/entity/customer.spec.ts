@@ -4,7 +4,12 @@ import Customer from "./customer";
 describe("Customer unit test", () => {
   it("should create a new customer", () => {
     const customer = new Customer("1", "Raphael");
-    expect(customer).toEqual({ _id: "1", _name: "Raphael", _active: true });
+    expect(customer).toEqual({
+      _id: "1",
+      _name: "Raphael",
+      _active: true,
+      _rewardPoints: 0,
+    });
   });
 
   it("should not create a new customer an empty id", () => {
@@ -45,5 +50,14 @@ describe("Customer unit test", () => {
   it("should throw error when address is empty when activating a customer", () => {
     const customer = new Customer("1", "Raphael");
     expect(() => customer.activate()).toThrowError("Address is required.");
+  });
+
+  it("should add reward points", () => {
+    const customer = new Customer("1", "Raphael");
+    expect(customer.rewardPoints).toBe(0);
+    customer.addRewardPoints(10);
+    expect(customer.rewardPoints).toBe(10);
+    customer.addRewardPoints(10);
+    expect(customer.rewardPoints).toBe(20);
   });
 });
