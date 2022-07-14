@@ -1,7 +1,7 @@
-import Customer from "../entity/customer";
 import Order from "../entity/order";
 import OrderItem from "../entity/order_item";
 import { randomUUID } from "node:crypto";
+import Customer from "../../customer/entity/customer";
 
 export default class OrderService {
   static total(orders: Order[]): number {
