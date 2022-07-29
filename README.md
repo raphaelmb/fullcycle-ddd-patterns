@@ -1,6 +1,6 @@
 # Fullcycle DDD Patterns
 
-WIP
+Esse repo é um estudo sobre Domain Driven Design.
 
 ### Misc
 
